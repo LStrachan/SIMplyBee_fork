@@ -192,36 +192,36 @@ colony phenotype, say queen's fecundity</p></li>
     <div id="ref-examples">
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">nDronesPoisson</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 89</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 98</span>
 <span class="r-in"><span><span class="fu">nDronesPoisson</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 91</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 94</span>
 <span class="r-in"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu">nDronesPoisson</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">n</span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">200</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="nDronesFun-1.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   2   5   2   1   5   2   6   7   7  11  15  14  13  21  22  21  33  29  21  35 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  33  31  37  42  38  48  39  47  38  43  29  35  40  25  22  21  26  17  12  19 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 129 132 138 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  13  16  10   3   8   4   4   6   7   5   1   2   2   1   1   1   1   1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92  93  94  95 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   1   7   1   5   4   6   6   6  11   8  14  13  12  26  21  31  23  30  38  32 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  34  49  49  38  33  42  40  38  33  43  31  38  22  27  26  28  22  18  17  16 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116 117 118 119 120 121 122 123 124 125 126 127 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  15   6   3   5   7   4   6   3   3   5   2   2 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">nDronesTruncPoisson</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 95</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 104</span>
 <span class="r-in"><span><span class="fu">nDronesTruncPoisson</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 96</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] 95</span>
 <span class="r-in"><span><span class="va">n</span> <span class="op">&lt;-</span> <span class="fu">nDronesTruncPoisson</span><span class="op">(</span>n <span class="op">=</span> <span class="fl">1000</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/graphics/hist.html" class="external-link">hist</a></span><span class="op">(</span><span class="va">n</span>, breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span>from <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">min</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span>, to <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html" class="external-link">max</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span>, xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">200</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-plt img"><img src="nDronesFun-2.png" alt="" width="700" height="433"></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/table.html" class="external-link">table</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> n</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  67  69  71  73  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   1   1   1   1   3   2   4   3   3   7   4  11  10   7  15  26  13  22  16  24 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  91  92  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  32  33  30  39  32  34  49  41  39  38  39  55  41  32  33  33  40  26  17  25 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 111 112 113 114 115 116 117 118 119 120 121 122 124 126 130 134 </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  15  13  12  14   9  13   7  11   5   7   3   3   1   2   2   1 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  73  74  75  76  77  78  79  80  81  82  83  84  85  86  87  88  89  90  91  92 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   3   3   2   4   4   2   9   4  10   9   6  10   9  15  11  14  31  23  26  31 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  93  94  95  96  97  98  99 100 101 102 103 104 105 106 107 108 109 110 111 112 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  28  36  31  39  37  43  33  35  42  41  39  48  32  31  33  26  25  28  24  23 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113 114 115 116 117 118 119 120 121 122 123 124 125 126 127 128 130 132 133 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  20  15   8  11   7   7  10   3   1   2   2   4   2   2   1   1   2   1   1 </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Example for nDronesColonyPhenotype()</span></span></span>
 <span class="r-in"><span><span class="va">founderGenomes</span> <span class="op">&lt;-</span> <span class="fu">quickHaplo</span><span class="op">(</span>nInd <span class="op">=</span> <span class="fl">3</span>, nChr <span class="op">=</span> <span class="fl">1</span>, segSites <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span></span>
