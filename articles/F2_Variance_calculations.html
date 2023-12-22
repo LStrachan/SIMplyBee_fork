@@ -114,7 +114,7 @@
       <h1 data-toc-skip>Variance calculations between individual and
 colony level values</h1>
             
-            <h4 data-toc-skip class="date">2023-12-21</h4>
+            <h4 data-toc-skip class="date">2023-12-22</h4>
       
       <small class="dont-index">Source: <a href="https://github.com/HighlanderLab/SIMplyBee/blob/HEAD/vignettes/F2_Variance_calculations.Rmd" class="external-link"><code>vignettes/F2_Variance_calculations.Rmd</code></a></small>
       <div class="hidden name"><code>F2_Variance_calculations.Rmd</code></div>
@@ -148,29 +148,29 @@ colony level values</h1>
 <span><span class="va">basePop</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createCastePop.html">createVirginQueens</a></span><span class="op">(</span><span class="va">founderGenomes</span>, n <span class="op">=</span> <span class="fl">20</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">basePop</span><span class="op">@</span><span class="va">gv</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      queenTrait workersTrait</span></span>
-<span><span class="co">#&gt; [1,]   9.864395   0.09047077</span></span>
-<span><span class="co">#&gt; [2,]   9.657095   0.09302729</span></span>
-<span><span class="co">#&gt; [3,]   9.938755  -0.04944186</span></span>
-<span><span class="co">#&gt; [4,]  11.205215   0.08535519</span></span>
-<span><span class="co">#&gt; [5,]   9.089386   0.10132681</span></span>
-<span><span class="co">#&gt; [6,]  11.165603   0.01345943</span></span>
+<span><span class="co">#&gt; [1,]  10.126028  0.158365451</span></span>
+<span><span class="co">#&gt; [2,]  10.365955  0.164272919</span></span>
+<span><span class="co">#&gt; [3,]  10.327275  0.143215697</span></span>
+<span><span class="co">#&gt; [4,]   9.433321  0.185895632</span></span>
+<span><span class="co">#&gt; [5,]   9.412530  0.111646099</span></span>
+<span><span class="co">#&gt; [6,]  10.517958  0.009954303</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">basePop</span><span class="op">@</span><span class="va">pheno</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      queenTrait workersTrait</span></span>
-<span><span class="co">#&gt; [1,]   9.613504   0.14827739</span></span>
-<span><span class="co">#&gt; [2,]   7.557360  -0.07382599</span></span>
-<span><span class="co">#&gt; [3,]   7.583531  -0.27349338</span></span>
-<span><span class="co">#&gt; [4,]  12.674508   0.14649464</span></span>
-<span><span class="co">#&gt; [5,]   9.770796  -0.06826861</span></span>
-<span><span class="co">#&gt; [6,]   9.592546  -0.25005716</span></span>
+<span><span class="co">#&gt; [1,]   5.854378    0.0762070</span></span>
+<span><span class="co">#&gt; [2,]  10.743666    0.2939642</span></span>
+<span><span class="co">#&gt; [3,]   9.884338    0.2236022</span></span>
+<span><span class="co">#&gt; [4,]  12.241042    0.2340593</span></span>
+<span><span class="co">#&gt; [5,]  12.209232    0.3599154</span></span>
+<span><span class="co">#&gt; [6,]   9.140060    0.1182150</span></span>
 <span><span class="va">drones</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createCastePop.html">createDrones</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">basePop</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>, nInd <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></span>
 <span><span class="va">colony</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createColony.html">createColony</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">basePop</span><span class="op">[</span><span class="fl">6</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="va">colony</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cross.html">cross</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">colony</span>, drones <span class="op">=</span> <span class="va">drones</span><span class="op">)</span></span>
+<span><span class="va">colony</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cross.html">cross</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">colony</span>, drones <span class="op">=</span> <span class="va">drones</span>, checkCross <span class="op">=</span> <span class="st">"warning"</span><span class="op">)</span></span>
 <span><span class="va">colony</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/addCastePop.html">addWorkers</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">colony</span>, nInd <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
 <span><span class="va">colony</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/buildUp.html">buildUp</a></span><span class="op">(</span><span class="va">colony</span><span class="op">)</span></span>
 <span><span class="va">apiary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createMultiColony.html">createMultiColony</a></span><span class="op">(</span><span class="va">basePop</span><span class="op">[</span><span class="fl">7</span><span class="op">:</span><span class="fl">20</span><span class="op">]</span><span class="op">)</span></span>
 <span><span class="va">drones</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/createCastePop.html">createDrones</a></span><span class="op">(</span><span class="va">basePop</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span>, nInd <span class="op">=</span> <span class="fl">100</span><span class="op">)</span></span>
 <span><span class="va">droneGroups</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/pullDroneGroupsFromDCA.html">pullDroneGroupsFromDCA</a></span><span class="op">(</span><span class="va">drones</span>, n <span class="op">=</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span>, nDrones <span class="op">=</span> <span class="fl">15</span><span class="op">)</span></span>
-<span><span class="va">apiary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cross.html">cross</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">apiary</span>, drones <span class="op">=</span> <span class="va">droneGroups</span><span class="op">)</span></span>
+<span><span class="va">apiary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/cross.html">cross</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">apiary</span>, drones <span class="op">=</span> <span class="va">droneGroups</span>, checkCross <span class="op">=</span> <span class="st">"warning"</span><span class="op">)</span></span>
 <span><span class="va">apiary</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/buildUp.html">buildUp</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
 <span><span class="va">colonyGv</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calcColonyValue.html">calcColonyGv</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
 <span><span class="va">colonyPheno</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calcColonyValue.html">calcColonyPheno</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span></code></pre></div>
@@ -310,13 +310,13 @@ number of workers, the smaller the variance between workers</p>
 <span><span class="co"># Observed variation - on a per colony level</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">colonyGv</span><span class="op">)</span></span>
 <span><span class="co">#&gt;          [,1]</span></span>
-<span><span class="co">#&gt; [1,] 30.58369</span></span>
+<span><span class="co">#&gt; [1,] 31.53727</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">colonyPheno</span><span class="op">)</span></span>
-<span><span class="co">#&gt;          [,1]</span></span>
-<span><span class="co">#&gt; [1,] 43.32074</span></span>
+<span><span class="co">#&gt;         [,1]</span></span>
+<span><span class="co">#&gt; [1,] 41.7378</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">colonyGv</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">colonyPheno</span><span class="op">)</span></span>
 <span><span class="co">#&gt;           [,1]</span></span>
-<span><span class="co">#&gt; [1,] 0.7059827</span></span></code></pre></div>
+<span><span class="co">#&gt; [1,] 0.7556044</span></span></code></pre></div>
 <p>Hmm, we have much higher genetic and phenotypic variances in
 simulation than based simply looking at queen and n*workers variances,
 as well as much higher ratio between the two than the initial value of
@@ -348,9 +348,9 @@ in our case we have:</p>
 <span><span class="va">mean</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span> <span class="op">+</span> <span class="va">nW</span> <span class="op">*</span> <span class="va">mean</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] 20</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">colonyGv</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 18.90544</span></span>
+<span><span class="co">#&gt; [1] 21.9832</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">colonyPheno</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 18.72498</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 22.24927</span></span></code></pre></div>
 <p>Variance of colony genetic value is then:</p>
 <p><span class="math inline">\(Var(g_c) = Var(g_{q,q} +
 \Sigma_{i=1}^{n_w}(g_{i,w}))\)</span></p>
@@ -377,10 +377,10 @@ is:<a class="anchor" aria-label="anchor" href="#a-variance-of-the-queen-effect-i
 <code class="sourceCode R"><span><span class="va">varA</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span></span>
 <span><span class="co">#&gt; [1] 1</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="fu"><a href="../reference/getGv.html">getQueenGv</a></span><span class="op">(</span><span class="va">apiary</span>, collapse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">[</span>, <span class="st">"queenTrait"</span><span class="op">]</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1.255163</span></span>
+<span><span class="co">#&gt; [1] 1.420742</span></span>
 <span><span class="co"># ... note that R's var() divides by n-1, which matters with small n</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="fu"><a href="../reference/getGv.html">getQueenGv</a></span><span class="op">(</span><span class="va">apiary</span>, collapse <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">[</span>, <span class="st">"queenTrait"</span><span class="op">]</span> <span class="op">-</span> <span class="va">mean</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 1.167782</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 1.320008</span></span></code></pre></div>
 <p>Anyway, quite close!</p>
 </div>
 <div class="section level2">
@@ -411,10 +411,10 @@ would be:</p>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calcColonyValue.html">calcColonyGv</a></span><span class="op">(</span><span class="va">apiary</span>, <span class="va">mapCasteToColonyGv</span>, queenTrait <span class="op">=</span> <span class="cn">NULL</span>, workersTrait <span class="op">=</span> <span class="st">"workersTrait"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span>
 <span><span class="co">#&gt;              workersTrait</span></span>
-<span><span class="co">#&gt; workersTrait     31.69033</span></span>
+<span><span class="co">#&gt; workersTrait     37.32048</span></span>
 <span><span class="co"># ... note that R's var() divides by n-1, which matters with small n</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">g</span> <span class="op">-</span> <span class="va">nW</span> <span class="op">*</span> <span class="va">mean</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 30.52269</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 38.48013</span></span></code></pre></div>
 <p>So, a huge discrepancy between the variance of a sum of genetic
 values for the workers effect <code>nW * varA[2]</code> (assuming
 independence) and a realised sum of genetic values for the workers
@@ -458,10 +458,10 @@ n_w)\frac{1}{2}\sigma^2_{g_w}\)</span>). In our case this would be:</p>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calcColonyValue.html">calcColonyGv</a></span><span class="op">(</span><span class="va">apiary</span>, <span class="va">mapCasteToColonyGv</span>, queenTrait <span class="op">=</span> <span class="cn">NULL</span>, workersTrait <span class="op">=</span> <span class="st">"workersTrait"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span> <span class="co"># B</span></span>
 <span><span class="co">#&gt;              workersTrait</span></span>
-<span><span class="co">#&gt; workersTrait     31.69033</span></span>
+<span><span class="co">#&gt; workersTrait     37.32048</span></span>
 <span><span class="co"># ... note that R's var() divides by n-1, which matters with small n</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">g</span> <span class="op">-</span> <span class="va">nW</span> <span class="op">*</span> <span class="va">mean</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span> <span class="co"># B</span></span>
-<span><span class="co">#&gt; [1] 30.52269</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 38.48013</span></span></code></pre></div>
 <p>If we would only have super-sisters we would have ~1 for B1, ~49.5
 for B2, and ~50.5 for B, but with a mix of half-sisters and
 super-sisters we would have a lower value, which is what we see above,
@@ -533,10 +533,10 @@ Is this correct?</p>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/calcColonyValue.html">calcColonyGv</a></span><span class="op">(</span><span class="va">apiary</span>, <span class="va">mapCasteToColonyGv</span>, queenTrait <span class="op">=</span> <span class="cn">NULL</span>, workersTrait <span class="op">=</span> <span class="st">"workersTrait"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span> <span class="co"># B</span></span>
 <span><span class="co">#&gt;              workersTrait</span></span>
-<span><span class="co">#&gt; workersTrait     31.69033</span></span>
+<span><span class="co">#&gt; workersTrait     37.32048</span></span>
 <span><span class="co"># ... note that R's var() divides by n-1, which matters with small n</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">g</span> <span class="op">-</span> <span class="va">SP</span><span class="op">$</span><span class="va">nWorkers</span> <span class="op">*</span> <span class="va">mean</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span> <span class="co"># B</span></span>
-<span><span class="co">#&gt; [1] 30.52269</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 38.48013</span></span></code></pre></div>
 <p>Cool - very close!!! There can be some difference because the
 formulae above assume that we have fixed sizes of half-sister and
 super-sister groups. Also, there can be full-sisters in there as
@@ -605,9 +605,9 @@ g_{q,w})\)</span></p>
 <span><span class="va">g</span> <span class="op">&lt;-</span> <span class="va">colonyGv</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">g</span><span class="op">)</span></span>
 <span><span class="co">#&gt;          [,1]</span></span>
-<span><span class="co">#&gt; [1,] 30.58369</span></span>
+<span><span class="co">#&gt; [1,] 31.53727</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">g</span> <span class="op">-</span> <span class="fl">20</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 29.5972</span></span>
+<span><span class="co">#&gt; [1] 33.21768</span></span>
 <span></span>
 <span></span>
 <span><span class="op">(</span><span class="va">varQueen</span> <span class="op">&lt;-</span> <span class="va">varP</span><span class="op">[</span><span class="fl">1</span><span class="op">]</span><span class="op">)</span> <span class="co"># A</span></span>
@@ -630,10 +630,10 @@ g_{q,w})\)</span></p>
 <span></span>
 <span><span class="va">p</span> <span class="op">&lt;-</span> <span class="va">colonyPheno</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/stats/cor.html" class="external-link">var</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span>
-<span><span class="co">#&gt;          [,1]</span></span>
-<span><span class="co">#&gt; [1,] 43.32074</span></span>
+<span><span class="co">#&gt;         [,1]</span></span>
+<span><span class="co">#&gt; [1,] 41.7378</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="op">(</span><span class="va">p</span> <span class="op">-</span> <span class="fl">20</span><span class="op">)</span><span class="op">^</span><span class="fl">2</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="../reference/nColonies.html">nColonies</a></span><span class="op">(</span><span class="va">apiary</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 41.85209</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] 43.81576</span></span></code></pre></div>
 <p>Bingo for genetic variance and very close for phenotypic too, but we
 need to check some part above!</p>
 </div>
